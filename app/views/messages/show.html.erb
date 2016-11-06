@@ -1,0 +1,4 @@
+<h1><%= @message.title %></h1>
+<p><%= @message.body %></p>
+<%= link_to "Edit message", edit_message_path(@message), class: "btn btn-warning" %>
+<%= link_to "Delete message", @message , method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"} %>
