@@ -1,0 +1,6 @@
+<h6><%= comment.user.email %></h6>
+<p><%= comment.body %></p>
+<small><%= time_ago_in_words(comment.created_at) %></small>
+<small><%= link_to "Edit", edit_message_comment_path(comment.message, comment) %></small>
+<small><%= link_to "Delete", message_comment_path(comment.message, comment), method: :delete, data: {confirm: "Are you sure?"} %></small>
+<hr>
