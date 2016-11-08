@@ -15,3 +15,18 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.messages_row {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	flex-wrap: wrap;
+	.message_box {
+		background: #1abc9c;
+		text-align: center;
+		border-radius: 6px;
+		padding: 4rem;
+		width: 30%;
+		margin-left: 3%;
+	}
+}

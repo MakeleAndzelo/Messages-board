@@ -1,9 +1,13 @@
-<% if !@messages.empty? %>
-	<% @messages.each do |message| %>
-		<h2><%= message.title %></h2>
-		<%= link_to "Show message", message, class: "btn btn-primary" %>
+<div class="messages_row">
+	<% if !@messages.empty? %>
+		<% @messages.each do |message| %>
+			<div class="message_box">
+				<h2><%= message.title %></h2>
+				<%= link_to "Show message", message, class: "btn btn-danger" %>
+			</div>
+		<% end -%>
+	<% else %>
+		<h1>Add new message here: </h1>
+		<%= link_to "Add message!", new_message_path, class: "btn btn-success" %>
 	<% end -%>
-<% else %>
-	<h1>Add new message here: </h1>
-	<%= link_to "Add message!", new_message_path, class: "btn btn-success" %>
-<% end -%>
+</div>
