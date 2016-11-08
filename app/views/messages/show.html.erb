@@ -4,9 +4,15 @@
 	<%= link_to "Edit message", edit_message_path(@message), class: "btn btn-warning" %>
 	<%= link_to "Delete message", @message , method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"} %>
 <% end -%>
-<h2>Comments: </h2>
-<hr>
-<%= render @message.comments %>
 
-<h2>Reply a comment: </h2>
-<%= render 'comments/form' %>
+
+<% if !@message.comments.empty? %>
+	<h2>Comments: </h2>
+	<hr>
+	<%= render @message.comments %>
+<% end -%>
+
+<% if user_signed_in? %>
+	<h2>Reply a comment: </h2>
+	<%= render 'comments/form' %>
+<% end -%>
